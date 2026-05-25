@@ -45,6 +45,7 @@ The 4-agent pipeline is inspired by pdf-to-markdown-batch-6tools:
 | `/parse` | parser only | Parse raw data into structured statements |
 | `/ratio` | analyzer only | Compute financial ratios and metrics |
 | `/report` | reporter only | Generate analysis report from structured data |
+| `/sync` | sync agent | Sync private master to public mirror |
 
 ## Skill: financial-statement-analysis
 
@@ -98,3 +99,29 @@ root/
 - Single-year analysis → minimum 3-5 years for trend analysis
 - Ignoring footnotes → material information lives there
 - Hardcoded financial line-item names → use configurable mapping dictionaries
+
+## Repository Architecture — Dual Remote
+
+```
+Private (private remote)          Public (public remote)
+  master branch                     public branch
+  [full codebase + private data]    [whitelisted subset only]
+
+  git push private master           git push public public
+       │                                  │
+       │  /sync                           │
+       │  checkout public                 │
+       │  merge master                    │
+       │  safety check vs whitelist.txt   │
+       │  push public public              │
+       └──────────────────────────────────┘
+```
+
+**Whitelist:** `whitelist.txt` defines what appears on the public mirror.
+**Private (never public):** `data/cache/`, `data/filings/` — API cache and downloaded XBRL data.
+**Git:**
+- `git push private master` — push development
+- `git push public public` — push curated public mirror
+- `/sync` — merge master → public, safety check, push
+- `/sync check` — verify no private files on public branch
+- `/sync status` — show ahead/behind state
