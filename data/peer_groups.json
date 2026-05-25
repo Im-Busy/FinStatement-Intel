@@ -1,0 +1,26 @@
+{
+  "Technology": {
+    "peers": ["AAPL", "MSFT", "GOOGL", "META", "AMZN", "NVDA", "CSCO", "ORCL"],
+    "description": "Large-cap US technology companies"
+  },
+  "Banking": {
+    "peers": ["JPM", "BAC", "WFC", "C", "GS", "MS"],
+    "description": "Money center and investment banks"
+  },
+  "Healthcare": {
+    "peers": ["JNJ", "PFE", "MRK", "ABBV", "ABT", "UNH"],
+    "description": "Pharmaceutical and healthcare companies"
+  },
+  "Consumer": {
+    "peers": ["WMT", "KO", "PEP", "PG", "COST", "MCD", "NKE"],
+    "description": "Consumer staples and discretionary"
+  },
+  "Energy": {
+    "peers": ["XOM", "CVX", "COP", "SLB", "EOG"],
+    "description": "Oil and gas majors"
+  },
+  "Industrial": {
+    "peers": ["GE", "CAT", "BA", "MMM", "HON", "UPS"],
+    "description": "Industrial conglomerates"
+  }
+}

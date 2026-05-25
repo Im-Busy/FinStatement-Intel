@@ -1,0 +1,1215 @@
+{
+  "status": "SUCCESS",
+  "company": {
+    "name": "Alphabet Inc.",
+    "ticker": "GOOGL",
+    "cik": "0001652044",
+    "fiscal_year_end": "",
+    "currency": "USD"
+  },
+  "periods": [
+    {
+      "type": "annual",
+      "fiscal_year": 2025,
+      "end_date": "2023-12-31",
+      "source": "sec-edgar-xbrl",
+      "statements": {
+        "IS": {
+          "unit": "USD",
+          "line_items": [
+            {
+              "label": "CostOfRevenue",
+              "value": 133332000000,
+              "needs_review": false
+            },
+            {
+              "label": "CostOfRevenue",
+              "value": 146306000000,
+              "needs_review": false
+            },
+            {
+              "label": "CostOfRevenue",
+              "value": 162535000000,
+              "needs_review": false
+            },
+            {
+              "label": "EarningsPerShareBasic",
+              "value": 5.84,
+              "needs_review": false
+            },
+            {
+              "label": "EarningsPerShareBasic",
+              "value": 8.13,
+              "needs_review": false
+            },
+            {
+              "label": "EarningsPerShareBasic",
+              "value": 10.91,
+              "needs_review": false
+            },
+            {
+              "label": "EarningsPerShareDiluted",
+              "value": 5.8,
+              "needs_review": false
+            },
+            {
+              "label": "EarningsPerShareDiluted",
+              "value": 8.04,
+              "needs_review": false
+            },
+            {
+              "label": "EarningsPerShareDiluted",
+              "value": 10.81,
+              "needs_review": false
+            },
+            {
+              "label": "IncomeTaxExpenseBenefit",
+              "value": 11922000000,
+              "needs_review": false
+            },
+            {
+              "label": "IncomeTaxExpenseBenefit",
+              "value": 19697000000,
+              "needs_review": false
+            },
+            {
+              "label": "IncomeTaxExpenseBenefit",
+              "value": 26656000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetIncomeLoss",
+              "value": 73795000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetIncomeLoss",
+              "value": 100118000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetIncomeLoss",
+              "value": 132170000000,
+              "needs_review": false
+            },
+            {
+              "label": "NonoperatingIncomeExpense",
+              "value": 1424000000,
+              "needs_review": false
+            },
+            {
+              "label": "NonoperatingIncomeExpense",
+              "value": 7425000000,
+              "needs_review": false
+            },
+            {
+              "label": "NonoperatingIncomeExpense",
+              "value": 29787000000,
+              "needs_review": false
+            },
+            {
+              "label": "OperatingIncomeLoss",
+              "value": 84293000000,
+              "needs_review": false
+            },
+            {
+              "label": "OperatingIncomeLoss",
+              "value": 112390000000,
+              "needs_review": false
+            },
+            {
+              "label": "OperatingIncomeLoss",
+              "value": 129039000000,
+              "needs_review": false
+            },
+            {
+              "label": "ResearchAndDevelopmentExpense",
+              "value": 45427000000,
+              "needs_review": false
+            },
+            {
+              "label": "ResearchAndDevelopmentExpense",
+              "value": 49326000000,
+              "needs_review": false
+            },
+            {
+              "label": "ResearchAndDevelopmentExpense",
+              "value": 61087000000,
+              "needs_review": false
+            },
+            {
+              "label": "Revenues",
+              "value": 307394000000,
+              "needs_review": false
+            },
+            {
+              "label": "Revenues",
+              "value": 350018000000,
+              "needs_review": false
+            },
+            {
+              "label": "Revenues",
+              "value": 402836000000,
+              "needs_review": false
+            },
+            {
+              "label": "WeightedAverageNumberOfDilutedSharesOutstanding",
+              "value": 12722000000,
+              "needs_review": false
+            },
+            {
+              "label": "WeightedAverageNumberOfDilutedSharesOutstanding",
+              "value": 12447000000,
+              "needs_review": false
+            },
+            {
+              "label": "WeightedAverageNumberOfDilutedSharesOutstanding",
+              "value": 12230000000,
+              "needs_review": false
+            },
+            {
+              "label": "WeightedAverageNumberOfSharesOutstandingBasic",
+              "value": 12630000000,
+              "needs_review": false
+            },
+            {
+              "label": "WeightedAverageNumberOfSharesOutstandingBasic",
+              "value": 12319000000,
+              "needs_review": false
+            },
+            {
+              "label": "WeightedAverageNumberOfSharesOutstandingBasic",
+              "value": 12116000000,
+              "needs_review": false
+            }
+          ]
+        },
+        "BS": {
+          "unit": "USD",
+          "line_items": [
+            {
+              "label": "AccountsPayableCurrent",
+              "value": 7987000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccountsPayableCurrent",
+              "value": 12200000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccountsReceivableNetCurrent",
+              "value": 52340000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccountsReceivableNetCurrent",
+              "value": 62886000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccumulatedOtherComprehensiveIncomeLossNetOfTax",
+              "value": -4800000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccumulatedOtherComprehensiveIncomeLossNetOfTax",
+              "value": -1916000000,
+              "needs_review": false
+            },
+            {
+              "label": "Assets",
+              "value": 450256000000,
+              "needs_review": false
+            },
+            {
+              "label": "Assets",
+              "value": 595281000000,
+              "needs_review": false
+            },
+            {
+              "label": "AssetsCurrent",
+              "value": 163711000000,
+              "needs_review": false
+            },
+            {
+              "label": "AssetsCurrent",
+              "value": 206038000000,
+              "needs_review": false
+            },
+            {
+              "label": "CashAndCashEquivalentsAtCarryingValue",
+              "value": 23466000000,
+              "needs_review": false
+            },
+            {
+              "label": "CashAndCashEquivalentsAtCarryingValue",
+              "value": 30708000000,
+              "needs_review": false
+            },
+            {
+              "label": "Goodwill",
+              "value": 29198000000,
+              "needs_review": false
+            },
+            {
+              "label": "Goodwill",
+              "value": 31885000000,
+              "needs_review": false
+            },
+            {
+              "label": "Goodwill",
+              "value": 33380000000,
+              "needs_review": false
+            },
+            {
+              "label": "Liabilities",
+              "value": 125172000000,
+              "needs_review": false
+            },
+            {
+              "label": "Liabilities",
+              "value": 180016000000,
+              "needs_review": false
+            },
+            {
+              "label": "LiabilitiesCurrent",
+              "value": 89122000000,
+              "needs_review": false
+            },
+            {
+              "label": "LiabilitiesCurrent",
+              "value": 102745000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebt",
+              "value": 49085000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebtCurrent",
+              "value": 999000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebtCurrent",
+              "value": 1996000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebtNoncurrent",
+              "value": 10883000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebtNoncurrent",
+              "value": 46547000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherAssetsCurrent",
+              "value": 15714000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherAssetsCurrent",
+              "value": 16309000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherAssetsNoncurrent",
+              "value": 14874000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherAssetsNoncurrent",
+              "value": 16245000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherLiabilitiesNoncurrent",
+              "value": 4694000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherLiabilitiesNoncurrent",
+              "value": 8449000000,
+              "needs_review": false
+            },
+            {
+              "label": "RetainedEarningsAccumulatedDeficit",
+              "value": 245084000000,
+              "needs_review": false
+            },
+            {
+              "label": "RetainedEarningsAccumulatedDeficit",
+              "value": 324055000000,
+              "needs_review": false
+            },
+            {
+              "label": "StockholdersEquity",
+              "value": 256144000000,
+              "needs_review": false
+            },
+            {
+              "label": "StockholdersEquity",
+              "value": 283379000000,
+              "needs_review": false
+            },
+            {
+              "label": "StockholdersEquity",
+              "value": 325084000000,
+              "needs_review": false
+            },
+            {
+              "label": "StockholdersEquity",
+              "value": 415265000000,
+              "needs_review": false
+            }
+          ]
+        },
+        "CFS": {
+          "unit": "USD",
+          "line_items": [
+            {
+              "label": "NetCashProvidedByUsedInFinancingActivities",
+              "value": -72093000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInFinancingActivities",
+              "value": -79733000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInFinancingActivities",
+              "value": -37388000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInInvestingActivities",
+              "value": -27063000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInInvestingActivities",
+              "value": -45536000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInInvestingActivities",
+              "value": -120291000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInOperatingActivities",
+              "value": 101746000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInOperatingActivities",
+              "value": 125299000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInOperatingActivities",
+              "value": 164713000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetIncomeLoss",
+              "value": 73795000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetIncomeLoss",
+              "value": 100118000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetIncomeLoss",
+              "value": 132170000000,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsForRepurchaseOfCommonStock",
+              "value": 61504000000,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsForRepurchaseOfCommonStock",
+              "value": 62222000000,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsForRepurchaseOfCommonStock",
+              "value": 45709000000,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsOfDividends",
+              "value": 0,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsOfDividends",
+              "value": 7363000000,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsOfDividends",
+              "value": 10049000000,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsToAcquirePropertyPlantAndEquipment",
+              "value": 32251000000,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsToAcquirePropertyPlantAndEquipment",
+              "value": 52535000000,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsToAcquirePropertyPlantAndEquipment",
+              "value": 91447000000,
+              "needs_review": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "annual",
+      "fiscal_year": 2024,
+      "end_date": "",
+      "source": "sec-edgar-xbrl",
+      "statements": {
+        "IS": {
+          "unit": "USD",
+          "line_items": [
+            {
+              "label": "CostOfRevenue",
+              "value": 126203000000,
+              "needs_review": false
+            },
+            {
+              "label": "CostOfRevenue",
+              "value": 133332000000,
+              "needs_review": false
+            },
+            {
+              "label": "EarningsPerShareBasic",
+              "value": 4.59,
+              "needs_review": false
+            },
+            {
+              "label": "EarningsPerShareBasic",
+              "value": 5.84,
+              "needs_review": false
+            },
+            {
+              "label": "EarningsPerShareDiluted",
+              "value": 4.56,
+              "needs_review": false
+            },
+            {
+              "label": "EarningsPerShareDiluted",
+              "value": 5.8,
+              "needs_review": false
+            },
+            {
+              "label": "IncomeTaxExpenseBenefit",
+              "value": 11356000000,
+              "needs_review": false
+            },
+            {
+              "label": "IncomeTaxExpenseBenefit",
+              "value": 11922000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetIncomeLoss",
+              "value": 59972000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetIncomeLoss",
+              "value": 73795000000,
+              "needs_review": false
+            },
+            {
+              "label": "NonoperatingIncomeExpense",
+              "value": -3514000000,
+              "needs_review": false
+            },
+            {
+              "label": "NonoperatingIncomeExpense",
+              "value": 1424000000,
+              "needs_review": false
+            },
+            {
+              "label": "OperatingIncomeLoss",
+              "value": 74842000000,
+              "needs_review": false
+            },
+            {
+              "label": "OperatingIncomeLoss",
+              "value": 84293000000,
+              "needs_review": false
+            },
+            {
+              "label": "ResearchAndDevelopmentExpense",
+              "value": 39500000000,
+              "needs_review": false
+            },
+            {
+              "label": "ResearchAndDevelopmentExpense",
+              "value": 45427000000,
+              "needs_review": false
+            },
+            {
+              "label": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "value": 282836000000,
+              "needs_review": false
+            },
+            {
+              "label": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "value": 307394000000,
+              "needs_review": false
+            },
+            {
+              "label": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "value": 350018000000,
+              "needs_review": false
+            },
+            {
+              "label": "WeightedAverageNumberOfDilutedSharesOutstanding",
+              "value": 13159000000,
+              "needs_review": false
+            },
+            {
+              "label": "WeightedAverageNumberOfDilutedSharesOutstanding",
+              "value": 12722000000,
+              "needs_review": false
+            },
+            {
+              "label": "WeightedAverageNumberOfSharesOutstandingBasic",
+              "value": 13063000000,
+              "needs_review": false
+            },
+            {
+              "label": "WeightedAverageNumberOfSharesOutstandingBasic",
+              "value": 12630000000,
+              "needs_review": false
+            }
+          ]
+        },
+        "BS": {
+          "unit": "USD",
+          "line_items": [
+            {
+              "label": "AccountsPayableCurrent",
+              "value": 7493000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccountsPayableCurrent",
+              "value": 7987000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccountsReceivableNetCurrent",
+              "value": 47964000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccountsReceivableNetCurrent",
+              "value": 52340000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment",
+              "value": 67458000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment",
+              "value": 79390000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccumulatedOtherComprehensiveIncomeLossNetOfTax",
+              "value": -4402000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccumulatedOtherComprehensiveIncomeLossNetOfTax",
+              "value": -4800000000,
+              "needs_review": false
+            },
+            {
+              "label": "Assets",
+              "value": 402392000000,
+              "needs_review": false
+            },
+            {
+              "label": "Assets",
+              "value": 450256000000,
+              "needs_review": false
+            },
+            {
+              "label": "AssetsCurrent",
+              "value": 171530000000,
+              "needs_review": false
+            },
+            {
+              "label": "AssetsCurrent",
+              "value": 163711000000,
+              "needs_review": false
+            },
+            {
+              "label": "CashAndCashEquivalentsAtCarryingValue",
+              "value": 24048000000,
+              "needs_review": false
+            },
+            {
+              "label": "CashAndCashEquivalentsAtCarryingValue",
+              "value": 23466000000,
+              "needs_review": false
+            },
+            {
+              "label": "Goodwill",
+              "value": 28960000000,
+              "needs_review": false
+            },
+            {
+              "label": "Goodwill",
+              "value": 29198000000,
+              "needs_review": false
+            },
+            {
+              "label": "Liabilities",
+              "value": 119013000000,
+              "needs_review": false
+            },
+            {
+              "label": "Liabilities",
+              "value": 125172000000,
+              "needs_review": false
+            },
+            {
+              "label": "LiabilitiesCurrent",
+              "value": 81814000000,
+              "needs_review": false
+            },
+            {
+              "label": "LiabilitiesCurrent",
+              "value": 89122000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebt",
+              "value": 13000000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebt",
+              "value": 12000000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebtCurrent",
+              "value": 1000000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebtCurrent",
+              "value": 999000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebtNoncurrent",
+              "value": 11870000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebtNoncurrent",
+              "value": 10883000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherAssetsCurrent",
+              "value": 12650000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherAssetsCurrent",
+              "value": 15714000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherAssetsNoncurrent",
+              "value": 10051000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherAssetsNoncurrent",
+              "value": 14874000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherLiabilitiesNoncurrent",
+              "value": 4395000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherLiabilitiesNoncurrent",
+              "value": 4694000000,
+              "needs_review": false
+            },
+            {
+              "label": "PropertyPlantAndEquipmentGross",
+              "value": 166667000000,
+              "needs_review": false
+            },
+            {
+              "label": "PropertyPlantAndEquipmentGross",
+              "value": 199829000000,
+              "needs_review": false
+            },
+            {
+              "label": "PropertyPlantAndEquipmentNet",
+              "value": 134345000000,
+              "needs_review": false
+            },
+            {
+              "label": "PropertyPlantAndEquipmentNet",
+              "value": 171036000000,
+              "needs_review": false
+            },
+            {
+              "label": "RetainedEarningsAccumulatedDeficit",
+              "value": 211247000000,
+              "needs_review": false
+            },
+            {
+              "label": "RetainedEarningsAccumulatedDeficit",
+              "value": 245084000000,
+              "needs_review": false
+            },
+            {
+              "label": "StockholdersEquity",
+              "value": 251635000000,
+              "needs_review": false
+            },
+            {
+              "label": "Cash",
+              "value": 12509000000,
+              "needs_review": false
+            },
+            {
+              "label": "Cash",
+              "value": 12407000000,
+              "needs_review": false
+            }
+          ]
+        },
+        "CFS": {
+          "unit": "USD",
+          "line_items": [
+            {
+              "label": "NetCashProvidedByUsedInFinancingActivities",
+              "value": -69757000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInFinancingActivities",
+              "value": -72093000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInInvestingActivities",
+              "value": -20298000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInInvestingActivities",
+              "value": -27063000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInOperatingActivities",
+              "value": 91495000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetCashProvidedByUsedInOperatingActivities",
+              "value": 101746000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetIncomeLoss",
+              "value": 59972000000,
+              "needs_review": false
+            },
+            {
+              "label": "NetIncomeLoss",
+              "value": 73795000000,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsForRepurchaseOfCommonStock",
+              "value": 59296000000,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsForRepurchaseOfCommonStock",
+              "value": 61504000000,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsOfDividends",
+              "value": 0,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsOfDividends",
+              "value": 0,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsToAcquirePropertyPlantAndEquipment",
+              "value": 31485000000,
+              "needs_review": false
+            },
+            {
+              "label": "PaymentsToAcquirePropertyPlantAndEquipment",
+              "value": 32251000000,
+              "needs_review": false
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "annual",
+      "fiscal_year": 2023,
+      "end_date": "",
+      "source": "sec-edgar-xbrl",
+      "statements": {
+        "IS": {
+          "unit": "USD",
+          "line_items": [
+            {
+              "label": "InterestExpense",
+              "value": 346000000,
+              "needs_review": false
+            },
+            {
+              "label": "InterestExpense",
+              "value": 357000000,
+              "needs_review": false
+            },
+            {
+              "label": "InterestExpense",
+              "value": 308000000,
+              "needs_review": false
+            },
+            {
+              "label": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "value": 257637000000,
+              "needs_review": false
+            },
+            {
+              "label": "RevenueFromContractWithCustomerExcludingAssessedTax",
+              "value": 282836000000,
+              "needs_review": false
+            }
+          ]
+        },
+        "BS": {
+          "unit": "USD",
+          "line_items": [
+            {
+              "label": "AccountsPayableCurrent",
+              "value": 5128000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccountsReceivableNetCurrent",
+              "value": 40258000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment",
+              "value": 59042000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment",
+              "value": 67458000000,
+              "needs_review": false
+            },
+            {
+              "label": "AccumulatedOtherComprehensiveIncomeLossNetOfTax",
+              "value": -7603000000,
+              "needs_review": false
+            },
+            {
+              "label": "Assets",
+              "value": 365264000000,
+              "needs_review": false
+            },
+            {
+              "label": "AssetsCurrent",
+              "value": 164795000000,
+              "needs_review": false
+            },
+            {
+              "label": "CashAndCashEquivalentsAtCarryingValue",
+              "value": 21879000000,
+              "needs_review": false
+            },
+            {
+              "label": "DeferredIncomeTaxLiabilitiesNet",
+              "value": 514000000,
+              "needs_review": false
+            },
+            {
+              "label": "DeferredIncomeTaxLiabilitiesNet",
+              "value": 485000000,
+              "needs_review": false
+            },
+            {
+              "label": "Liabilities",
+              "value": 109120000000,
+              "needs_review": false
+            },
+            {
+              "label": "LiabilitiesCurrent",
+              "value": 69300000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebt",
+              "value": 14862000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebtCurrent",
+              "value": 0,
+              "needs_review": false
+            },
+            {
+              "label": "OtherAssetsCurrent",
+              "value": 10775000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherAssetsNoncurrent",
+              "value": 8707000000,
+              "needs_review": false
+            },
+            {
+              "label": "OtherLiabilitiesNoncurrent",
+              "value": 2247000000,
+              "needs_review": false
+            },
+            {
+              "label": "PropertyPlantAndEquipmentGross",
+              "value": 171710000000,
+              "needs_review": false
+            },
+            {
+              "label": "PropertyPlantAndEquipmentGross",
+              "value": 201803000000,
+              "needs_review": false
+            },
+            {
+              "label": "PropertyPlantAndEquipmentNet",
+              "value": 112668000000,
+              "needs_review": false
+            },
+            {
+              "label": "PropertyPlantAndEquipmentNet",
+              "value": 134345000000,
+              "needs_review": false
+            },
+            {
+              "label": "RetainedEarningsAccumulatedDeficit",
+              "value": 195563000000,
+              "needs_review": false
+            },
+            {
+              "label": "Cash",
+              "value": 8561000000,
+              "needs_review": false
+            },
+            {
+              "label": "Cash",
+              "value": 12509000000,
+              "needs_review": false
+            }
+          ]
+        },
+        "CFS": {
+          "unit": "USD",
+          "line_items": []
+        }
+      }
+    },
+    {
+      "type": "annual",
+      "fiscal_year": 2022,
+      "end_date": "",
+      "source": "sec-edgar-xbrl",
+      "statements": {
+        "IS": {
+          "unit": "USD",
+          "line_items": [
+            {
+              "label": "InterestExpense",
+              "value": 135000000,
+              "needs_review": false
+            },
+            {
+              "label": "InterestExpense",
+              "value": 346000000,
+              "needs_review": false
+            }
+          ]
+        },
+        "BS": {
+          "unit": "USD",
+          "line_items": [
+            {
+              "label": "AccumulatedDepreciationDepletionAndAmortizationPropertyPlantAndEquipment",
+              "value": 49414000000,
+              "needs_review": false
+            },
+            {
+              "label": "DeferredIncomeTaxLiabilitiesNet",
+              "value": 5257000000,
+              "needs_review": false
+            },
+            {
+              "label": "DeferredIncomeTaxLiabilitiesNet",
+              "value": 514000000,
+              "needs_review": false
+            },
+            {
+              "label": "IntangibleAssetsNetExcludingGoodwill",
+              "value": 1417000000,
+              "needs_review": false
+            },
+            {
+              "label": "IntangibleAssetsNetExcludingGoodwill",
+              "value": 2084000000,
+              "needs_review": false
+            },
+            {
+              "label": "InventoryNet",
+              "value": 1170000000,
+              "needs_review": false
+            },
+            {
+              "label": "InventoryNet",
+              "value": 2670000000,
+              "needs_review": false
+            },
+            {
+              "label": "LongTermDebt",
+              "value": 15312000000,
+              "needs_review": false
+            },
+            {
+              "label": "PropertyPlantAndEquipmentGross",
+              "value": 147013000000,
+              "needs_review": false
+            },
+            {
+              "label": "PropertyPlantAndEquipmentNet",
+              "value": 97599000000,
+              "needs_review": false
+            },
+            {
+              "label": "Cash",
+              "value": 8296000000,
+              "needs_review": false
+            }
+          ]
+        },
+        "CFS": {
+          "unit": "USD",
+          "line_items": []
+        }
+      }
+    },
+    {
+      "type": "annual",
+      "fiscal_year": 2021,
+      "end_date": "2019-12-31",
+      "source": "sec-edgar-xbrl",
+      "statements": {
+        "IS": {
+          "unit": "USD",
+          "line_items": [
+            {
+              "label": "Revenues",
+              "value": 161857000000,
+              "needs_review": false
+            },
+            {
+              "label": "Revenues",
+              "value": 182527000000,
+              "needs_review": false
+            }
+          ]
+        },
+        "BS": {
+          "unit": "USD",
+          "line_items": [
+            {
+              "label": "DeferredIncomeTaxLiabilitiesNet",
+              "value": 3561000000,
+              "needs_review": false
+            },
+            {
+              "label": "IntangibleAssetsNetExcludingGoodwill",
+              "value": 1445000000,
+              "needs_review": false
+            },
+            {
+              "label": "IntangibleAssetsNetExcludingGoodwill",
+              "value": 1417000000,
+              "needs_review": false
+            },
+            {
+              "label": "InventoryNet",
+              "value": 728000000,
+              "needs_review": false
+            },
+            {
+              "label": "InventoryNet",
+              "value": 1170000000,
+              "needs_review": false
+            }
+          ]
+        },
+        "CFS": {
+          "unit": "USD",
+          "line_items": []
+        }
+      }
+    }
+  ],
+  "warnings": [],
+  "metadata": {
+    "extraction_method": "edgar-api",
+    "periods_requested": 5,
+    "periods_extracted": 5
+  }
+}

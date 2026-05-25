@@ -1,0 +1,47 @@
+# Whitelist for public repo sync
+# Only paths listed here appear in the public mirror.
+# Lines starting with # are ignored.
+# Directories must end with /. Paths are relative to repo root.
+
+# === Source Code ===
+src/
+
+# === Tests ===
+tests/
+
+# === Entry Point ===
+main.py
+
+# === Project Config ===
+pyproject.toml
+uv.lock
+.python-version
+.gitignore
+whitelist.txt
+
+# === Documentation ===
+docs/
+README.md
+AGENTS.md
+
+# === AI Tool Infrastructure ===
+.kilo/agent/
+.kilo/command/
+.kilo/global-rules.md
+.kilo/project-rules.md
+.kilo/project-loop.md
+.kilo/package.json
+.kilo/.gitignore
+kilo.json
+
+# === Skills ===
+skills/
+skills/dual-repo-sync/
+
+# === Scripts ===
+scripts/
+
+# === Mapping Configs (code-like) ===
+data/mapping/
+data/samples/
+data/peer_groups.json

@@ -1,0 +1,35 @@
+[project]
+name = "reading-cfs-is-bs"
+version = "0.1.0"
+description = "Financial statement analysis skill and workflow — analyze Cash Flow Statements, Income Statements, and Balance Sheets with ratio computation, trend analysis, red flag detection, and cross-statement validation"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "requests>=2.31.0",
+    "pydantic>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "lxml>=6.1.1",
+    "beautifulsoup4>=4.14.3",
+    "pymupdf>=1.27.2.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.1.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

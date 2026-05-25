@@ -1,0 +1,10 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "enabled_providers": ["kilo", "deepseek", "openrouter-openai_compatible"],
+  "model": "openrouter/deepseek/deepseek-v4-pro",
+  "small_model": "openrouter/deepseek/deepseek-v4-flash",
+  "instructions": [".kilo/global-rules.md", ".kilo/project-rules.md"],
+  "skills": {
+    "paths": ["C:\\Dev\\skills", ".kilo\\skills", "skills"]
+  }
+}
