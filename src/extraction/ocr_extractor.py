@@ -208,6 +208,67 @@ def _extract_line_items_from_text(text: str) -> dict[str, list[dict[str, Any]]]:
     return statements
 
 
+def _ocr_image_file(
+    image_path: str,
+    engine: str = "tesseract",
+) -> str:
+    """OCR a standalone image file (JPG, PNG, etc.) directly."""
+    if engine == "paddleocr":
+        return _ocr_page_with_paddleocr(image_path, 0) if not image_path else _ocr_image_with_paddleocr(image_path)
+
+    try:
+        import pytesseract
+        from PIL import Image
+    except ImportError:
+        logger.info("OCR dependencies not available")
+        return ""
+
+    try:
+        img = Image.open(image_path)
+        return pytesseract.image_to_string(img, lang="eng")
+    except Exception as e:
+        logger.warning("Tesseract OCR failed for image %s: %s", image_path, e)
+        return ""
+
+
+def _ocr_image_with_paddleocr(image_path: str) -> str:
+    """OCR an image file using PaddleOCR."""
+    try:
+        from paddleocr import PaddleOCR
+    except ImportError:
+        logger.info("PaddleOCR not available")
+        return ""
+
+    try:
+        ocr = PaddleOCR(lang="en", show_log=False)
+        result = ocr.ocr(image_path)
+        if not result or not result[0]:
+            return ""
+        lines = [line[1][0] for group in result for line in group if line and len(line) > 1]
+        return "\n".join(lines)
+    except Exception as e:
+        logger.warning("PaddleOCR failed for image %s: %s", image_path, e)
+        return ""
+
+
+def _is_pdf_file(path: str) -> bool:
+    """Check if a file appears to be a PDF (by extension or magic bytes)."""
+    p = Path(path)
+    if p.suffix.lower() == ".pdf":
+        return True
+    try:
+        return p.read_bytes()[:4] == b"%PDF"
+    except OSError:
+        return False
+
+
+def _is_image_file(path: str) -> bool:
+    """Check if a file appears to be an image."""
+    ext = Path(path).suffix.lower()
+    image_extensions = {".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff", ".tif", ".webp"}
+    return ext in image_extensions
+
+
 def extract_with_ocr(
     pdf_path: str,
     ticker: str,
@@ -225,6 +286,46 @@ def extract_with_ocr(
     Returns:
         Extraction result dict or None on failure.
     """
+    if _is_image_file(pdf_path):
+        ocr_text = _ocr_image_file(pdf_path, engine)
+        if not ocr_text:
+            return None
+
+        statements = _extract_line_items_from_text(ocr_text)
+        total_items = sum(len(items) for items in statements.values())
+        if total_items == 0:
+            return None
+
+        unit_name, currency = detect_unit([ocr_text])
+        period = {
+            "type": "annual",
+            "fiscal_year": 0,
+            "end_date": "",
+            "source": f"ocr-image-{engine}",
+            "statements": {
+                "IS": {"unit": unit_name, "line_items": statements.get("IS", [])},
+                "BS": {"unit": unit_name, "line_items": statements.get("BS", [])},
+                "CFS": {"unit": unit_name, "line_items": statements.get("CFS", [])},
+            },
+        }
+        return {
+            "status": "SUCCESS",
+            "company": {
+                "name": ticker.upper(),
+                "ticker": ticker.upper(),
+                "fiscal_year_end": "",
+                "currency": currency,
+            },
+            "periods": [period],
+            "warnings": [],
+            "metadata": {
+                "extraction_method": f"ocr-image-{engine}",
+                "extraction_timestamp": "",
+                "periods_requested": 1,
+                "periods_extracted": 1,
+            },
+        }
+
     try:
         import fitz
     except ImportError:

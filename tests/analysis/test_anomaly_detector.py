@@ -36,10 +36,10 @@ class TestDetectVolatilitySpikes:
         values = [100.0, 130.0]
         periods = ["FY2023", "FY2024"]
         result = detect_volatility_spikes(values, periods, "revenue")
-        assert result[0]["item"] == "revenue"
+        assert result[0]["metric"] == "revenue"
         assert result[0]["period"] == "FY2024"
-        assert result[0]["prev_value"] == 100.0
-        assert result[0]["curr_value"] == 130.0
+        assert result[0]["previous_value"] == 100.0
+        assert result[0]["current_value"] == 130.0
         assert result[0]["change_pct"] == 0.3
 
 
@@ -87,7 +87,7 @@ class TestDetectAnomalies:
         ]
         result = detect_anomalies(periods)
         assert len(result) == 1
-        assert result[0]["item"] == "revenue"
+        assert result[0]["metric"] == "revenue"
 
     def test_sorted_descending(self):
         periods = [

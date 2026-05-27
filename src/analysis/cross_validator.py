@@ -103,16 +103,21 @@ def validate_interest_consistency(
     interest_expense: float,
     total_debt: float,
     market_rate: float = 0.05,
+    periods_with_debt: int = 0,
 ) -> CrossValidationResult:
     """Check: Interest Expense ≈ Total Debt × Market Rate."""
     if total_debt <= 0 or interest_expense <= 0:
-        return CrossValidationResult("interest_consistency", "PASS", "No debt interest to validate")
+        return CrossValidationResult(
+            "interest_consistency", "PASS", "No debt interest to validate",
+            periods_evaluated=periods_with_debt,
+        )
     implied_rate = interest_expense / total_debt
     result = "PASS" if abs(implied_rate - market_rate) < 0.03 else "WARN"
     return CrossValidationResult(
         check_name="interest_consistency",
         result=result,
         detail=f"Implied rate {implied_rate:.1%} vs market ~{market_rate:.1%}",
+        periods_evaluated=periods_with_debt,
     )
 
 
@@ -145,11 +150,18 @@ def run_cross_validation(
     last_is = periods[-1].get("statements", {}).get("income_statement", {}) if periods else {}
     last_bs = periods[-1].get("statements", {}).get("balance_sheet", {}) if periods else {}
     total_debt = last_bs.get("long_term_debt", 0) + last_bs.get("short_term_debt", 0)
+    debt_periods = sum(
+        1 for p in periods
+        if p.get("statements", {}).get("balance_sheet", {}).get("long_term_debt", 0) > 0
+        or p.get("statements", {}).get("balance_sheet", {}).get("short_term_debt", 0) > 0
+    )
 
     return [
         validate_earnings_quality(ocf_series, ni_series),
         validate_revenue_quality(ar_series, revenue_series),
         validate_demand_health(inventory_series, revenue_series),
         validate_depreciation_consistency(acc_dep_series, dep_exp_series),
-        validate_interest_consistency(last_is.get("interest_expense", 0), total_debt),
+        validate_interest_consistency(
+            last_is.get("interest_expense", 0), total_debt, periods_with_debt=debt_periods
+        ),
     ]

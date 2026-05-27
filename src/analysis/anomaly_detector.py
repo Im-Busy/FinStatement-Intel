@@ -22,7 +22,7 @@ def detect_volatility_spikes(
         threshold: Volatility threshold as decimal (default 0.20 = 20%).
 
     Returns:
-        List of anomaly dicts with item, period, prev_value, curr_value, change_pct.
+        List of anomaly dicts with metric, period, previous_value, current_value, change_pct.
     """
     anomalies: list[dict[str, Any]] = []
     for i in range(1, len(values)):
@@ -34,11 +34,11 @@ def detect_volatility_spikes(
         if abs(change) > threshold:
             anomalies.append(
                 {
-                    "item": item_name,
+                    "metric": item_name,
                     "period": periods[i] if i < len(periods) else "",
-                    "prev_value": prev,
-                    "curr_value": curr,
-                    "change_pct": round(change, 4),
+                    "previous_value": prev,
+                    "current_value": curr,
+                    "change_pct": round(abs(change), 4),
                 }
             )
     return anomalies

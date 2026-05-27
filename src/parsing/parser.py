@@ -130,8 +130,20 @@ def parse_financial_data(raw_data: dict[str, Any]) -> dict[str, Any]:
     total_mapped_fuzzy = 0
     total_unmapped = 0
     parsed_periods: list[dict[str, Any]] = []
+    seen_fiscal_years: dict[int, int] = {}
+    duplicate_fy_count = 0
 
     for raw_period in raw_periods:
+        fy = raw_period.get("fiscal_year", 0)
+        if fy and fy in seen_fiscal_years:
+            duplicate_fy_count += 1
+            logger.debug(
+                "Skipping duplicate fiscal year %s for %s", fy,
+                company.get("ticker", "unknown"),
+            )
+            continue
+        if fy:
+            seen_fiscal_years[fy] = len(parsed_periods)
         normalized = normalize_period(raw_period, "millions")
         statements = normalized.get("statements", {})
 
@@ -219,6 +231,12 @@ def parse_financial_data(raw_data: dict[str, Any]) -> dict[str, Any]:
                     "income_statement_arithmetic": _vr_to_dict(
                         next(
                             (r for r in results if r.check_name == "income_statement_arithmetic"),
+                            None,
+                        )
+                    ),
+                    "gross_profit_plausibility": _vr_to_dict(
+                        next(
+                            (r for r in results if r.check_name == "gross_profit_plausibility"),
                             None,
                         )
                     ),

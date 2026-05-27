@@ -11,6 +11,11 @@ Usage:
     uv run main.py parse output/extracted_data.json
     uv run main.py ratio output/parsed_data.json
     uv run main.py report output/analyzed_data.json --format html
+
+    # File-based extraction (any format):
+    uv run main.py analyze --file statement.pdf --ticker AAPL
+    uv run main.py extract --file screenshot.png --vision-backend openai_compatible
+    uv run main.py extract --file report.docx --ticker MSFT
 """
 
 import argparse
@@ -19,7 +24,7 @@ import sys
 from pathlib import Path
 
 from src.analysis import analyze_financial_data
-from src.extraction import extract_financial_data
+from src.extraction import extract_financial_data, extract_from_file
 from src.parsing import parse_financial_data
 from src.reporting import generate_report
 from src.reporting.html_renderer import render_html
@@ -91,9 +96,12 @@ def _save_sample(raw_data: dict, ticker: str) -> None:
 
 def cmd_analyze(args: argparse.Namespace) -> None:
     """Run the full pipeline: extract -> parse -> analyze -> report."""
-    print(f"Analyzing {args.ticker} ({args.periods} periods, source: {args.source})...")
+    if args.file:
+        raw_data = _extract_from_file(args)
+    else:
+        print(f"Analyzing {args.ticker} ({args.periods} periods, source: {args.source})...")
+        raw_data = extract_financial_data(args.ticker, periods=args.periods, source=args.source)
 
-    raw_data = extract_financial_data(args.ticker, periods=args.periods, source=args.source)
     if raw_data["status"] == "ERROR":
         print(json.dumps(raw_data, indent=2))
         sys.exit(1)
@@ -114,12 +122,28 @@ def cmd_analyze(args: argparse.Namespace) -> None:
 
 def cmd_extract(args: argparse.Namespace) -> None:
     """Run extraction only."""
-    result = extract_financial_data(args.ticker, periods=args.periods, source=args.source)
+    if args.file:
+        result = _extract_from_file(args)
+    else:
+        result = extract_financial_data(args.ticker, periods=args.periods, source=args.source)
 
     if args.save_sample and result["status"] != "ERROR":
-        _save_sample(result, args.ticker)
+        _save_sample(result, args.ticker or result.get("company", {}).get("ticker", "unknown"))
     else:
         print(json.dumps(result, indent=2))
+
+
+def _extract_from_file(args: argparse.Namespace) -> dict:
+    """Extract financial data from a local file using auto-detection."""
+    file_type = Path(args.file).suffix
+    ticker = args.ticker or ""
+    print(f"Extracting from {args.file} ({file_type})...")
+    return extract_from_file(
+        args.file,
+        ticker=ticker,
+        periods=args.periods,
+        vision_backend=args.vision_backend,
+    )
 
 
 def cmd_parse(args: argparse.Namespace) -> None:
@@ -151,9 +175,11 @@ def main() -> None:
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     analyze_parser = subparsers.add_parser("analyze", help="Run full analysis pipeline")
-    analyze_parser.add_argument("ticker", help="Stock ticker symbol")
+    analyze_parser.add_argument("ticker", nargs="?", help="Stock ticker symbol")
+    analyze_parser.add_argument("--file", "-f", help="Local file path (PDF, image, DOCX, XLSX)")
     analyze_parser.add_argument("--periods", type=int, default=5, help="Number of periods")
-    analyze_parser.add_argument("--source", default="edgar", help="Data source")
+    analyze_parser.add_argument("--source", default="edgar", help="Data source (for ticker mode)")
+    analyze_parser.add_argument("--vision-backend", help="Vision backend: local, openai_compatible, anthropic")
     analyze_parser.add_argument(
         "--format", choices=OUTPUT_FORMATS, default="json", help="Report output format"
     )
@@ -161,9 +187,11 @@ def main() -> None:
     analyze_parser.set_defaults(func=cmd_analyze)
 
     extract_parser = subparsers.add_parser("extract", help="Extract raw financial data")
-    extract_parser.add_argument("ticker", help="Stock ticker symbol")
+    extract_parser.add_argument("ticker", nargs="?", help="Stock ticker symbol")
+    extract_parser.add_argument("--file", "-f", help="Local file path (PDF, image, DOCX, XLSX)")
     extract_parser.add_argument("--periods", type=int, default=5, help="Number of periods")
-    extract_parser.add_argument("--source", default="edgar", help="Data source")
+    extract_parser.add_argument("--source", default="edgar", help="Data source (for ticker mode)")
+    extract_parser.add_argument("--vision-backend", help="Vision backend: local, openai_compatible, anthropic")
     extract_parser.add_argument(
         "--save-sample",
         action="store_true",
