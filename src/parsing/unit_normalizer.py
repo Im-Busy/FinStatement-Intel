@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import logging
+import math
 
 from src.config import DEFAULT_UNIT
 
@@ -18,6 +19,11 @@ UNIT_SCALE: dict[str, int] = {
     "billions": 9,
     "trillions": 12,
 }
+
+
+def _isfinite(value: float) -> bool:
+    """Check if a value is a finite number (not NaN, not inf)."""
+    return isinstance(value, (int, float)) and math.isfinite(value)
 
 
 def normalize_value(
@@ -85,6 +91,16 @@ def normalize_statement_line_items(
     result: list[dict] = []
     for item in line_items:
         orig_val = item.get("value", 0.0)
+        if not isinstance(orig_val, (int, float)) or not _isfinite(orig_val):
+            result.append(
+                {
+                    **item,
+                    "value": 0.0,
+                    "original_value": orig_val,
+                    "original_unit": from_unit,
+                }
+            )
+            continue
         normalized_val = normalize_value(orig_val, from_unit, to_unit)
         result.append(
             {

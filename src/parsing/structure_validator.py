@@ -108,6 +108,38 @@ def validate_income_statement_arithmetic(
     )
 
 
+def validate_gross_profit_plausibility(
+    revenue: float,
+    gross_profit: float,
+) -> ValidationResult:
+    """Verify gross_profit is less than revenue (plausibility check).
+
+    Args:
+        revenue: Total revenue.
+        gross_profit: Reported gross profit.
+
+    Returns:
+        ValidationResult — fails if gross_profit >= revenue.
+    """
+    holds = gross_profit < revenue
+    detail = (
+        f"GP ({gross_profit:,.2f}) vs Rev ({revenue:,.2f}) — "
+        f"gross_profit is {gross_profit / revenue:.0%} of revenue"
+    )
+    if not holds:
+        detail += " [IMPLAUSIBLE: gross_profit >= revenue]"
+
+    return ValidationResult(
+        check_name="gross_profit_plausibility",
+        holds=holds,
+        expected=revenue,
+        actual=gross_profit,
+        difference=gross_profit - revenue,
+        diff_pct=round(abs(gross_profit - revenue) / max(abs(revenue), 1.0), 6),
+        detail=detail,
+    )
+
+
 def run_all_validations(period: Period) -> list[ValidationResult]:
     """Run all applicable structural validations for a period.
 
@@ -144,6 +176,10 @@ def run_all_validations(period: Period) -> list[ValidationResult]:
                 is_.cogs,
                 is_.gross_profit,
             )
+        )
+    if is_.revenue and is_.gross_profit and is_.gross_profit > 0:
+        results.append(
+            validate_gross_profit_plausibility(is_.revenue, is_.gross_profit)
         )
 
     return results

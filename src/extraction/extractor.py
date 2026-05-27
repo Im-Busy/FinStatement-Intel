@@ -366,6 +366,39 @@ def _extract_from_edgar_with_external(ticker: str, periods: int) -> dict[str, An
     return result
 
 
+def extract_from_file(
+    path: str,
+    ticker: str | None = None,
+    periods: int = 5,
+    vision_backend: str | None = None,
+) -> dict[str, Any]:
+    """Extract financial data from a local file (PDF, image, DOCX, XLSX).
+
+    Auto-detects file type and routes to the correct extractor. Supports
+    vision LLM backends via env vars or the vision_backend parameter.
+
+    Args:
+        path: Path to the file.
+        ticker: Optional company ticker for metadata.
+        periods: Number of periods (for PDF sources).
+        vision_backend: Override VISION_BACKEND env var ('local', 'openai_compatible', 'anthropic').
+
+    Returns:
+        Standard extraction result dict.
+    """
+    from pathlib import Path
+
+    from src.extraction.file_router import extract_from_file as _route
+    from src.extraction.vision_backend import VisionConfig
+
+    overrides = {}
+    if vision_backend:
+        overrides["VISION_BACKEND"] = vision_backend
+
+    config = VisionConfig.from_env(overrides if overrides else None)
+    return _route(Path(path), ticker=ticker, periods=periods, config=config)
+
+
 def extract_financial_data(
     ticker: str,
     periods: int = 5,

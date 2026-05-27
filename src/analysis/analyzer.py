@@ -40,9 +40,27 @@ def analyze_financial_data(parsed_data: dict[str, Any]) -> dict[str, Any]:
             "message": "No period data to analyze",
             "company": parsed_data.get("company", {}),
             "periods_analyzed": 0,
+            "analysis_period": "",
             "ratios": {},
             "trends": {},
             "red_flags": [],
+            "cross_validation": [],
+            "anomalies": [],
+            "scorecard": {
+                "profitability": 0,
+                "liquidity": 0,
+                "solvency": 0,
+                "efficiency": 0,
+                "cash_flow_quality": 0,
+                "total": 0,
+                "assessment": "N/A",
+            },
+            "peer_comparison": {
+                "peer_group": "unknown",
+                "peer_tickers": [],
+                "peers_loaded": 0,
+                "comparisons": {},
+            },
         }
 
     ratios = compute_all_ratios(periods)
