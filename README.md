@@ -1,4 +1,4 @@
-# reading-CFS-IS-BS
+# FinStatement Intel (reading-CFS-IS-BS)
 
 **Automated financial statement analysis pipeline** — analyze Cash Flow Statements, Income Statements, and Balance Sheets with ratio computation, trend analysis, red flag detection, and cross-statement validation.
 
